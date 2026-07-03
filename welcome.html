@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <style>
+        .welcome-hero {
+            text-align: center;
+            padding: 80px 60px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            margin-bottom: 24px;
+        }
+        .welcome-hero h1 {
+            font-size: 40px;
+            color: #1e3c72;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        .welcome-hero .subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 28px;
+        }
+        .welcome-hero .greeting {
+            font-size: 20px;
+            color: #2a5298;
+            font-weight: 500;
+            padding: 14px 28px;
+            background: #e8f0fe;
+            border-radius: 6px;
+            display: inline-block;
+        }
+        .feature-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .feature-card {
+            background: #fff;
+            padding: 28px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid #2a5298;
+            transition: transform 0.2s;
+        }
+        .feature-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .feature-card .icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+        .feature-card h3 {
+            color: #1e3c72;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .feature-card p {
+            color: #777;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .quick-tip {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background: #fff8e1;
+            border-radius: 6px;
+            color: #8d6e63;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body class="iframe-body">
+    <div class="welcome-hero">
+        <h1>欢迎来到智慧商品信息管理系统</h1>
+        <p class="subtitle">一站式商品信息管理平台 · 让数据管理更高效</p>
+        <div class="greeting">愿您在这里拥有愉快的工作体验 ✨</div>
+
+        <div class="feature-cards">
+            <div class="feature-card">
+                <div class="icon">📦</div>
+                <h3>商品管理</h3>
+                <p>支持商品的新增、编辑、删除，多维度信息维护</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🔍</div>
+                <h3>智能搜索</h3>
+                <p>按分类、名称、价格区间灵活组合查询</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📄</div>
+                <h3>分页浏览</h3>
+                <p>海量数据分页展示，翻页流畅体验佳</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🛡️</div>
+                <h3>权限管控</h3>
+                <p>管理员与普通用户分级授权，安全可靠</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">⚡</div>
+                <h3>缓存加速</h3>
+                <p>Redis 双重缓存，高并发访问也能秒响应</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📊</div>
+                <h3>分类组织</h3>
+                <p>商品按分类清晰归类，便于查找管理</p>
+            </div>
+        </div>
+
+        <div class="quick-tip">
+            💡 提示：请点击左侧菜单栏开始使用各项功能
+        </div>
+    </div>
+</body>
+</html>

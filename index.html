@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>智慧商品信息管理系统</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <!-- 顶部标题栏 -->
+    <header class="top-bar">
+        <div class="top-title">智慧商品信息管理系统</div>
+        <div class="top-user">
+            <span>当前用户：<b sec:authentication="name">用户</b></span>
+            <span sec:authorize="hasRole('admin')" style="color:#ffd700;">[管理员]</span>
+            <span sec:authorize="hasRole('normal')" style="color:#90ee90;">[普通用户]</span>
+            <form th:action="@{/logout}" method="post" style="display:inline;">
+                <button type="submit" class="btn-logout">退出登录</button>
+            </form>
+        </div>
+    </header>
+
+    <!-- 主体区域：左侧菜单 + 右侧 iframe -->
+    <div class="main-container">
+        <!-- 左侧导航栏 -->
+        <aside class="sidebar">
+            <ul class="menu">
+                <li><a href="/welcome" target="contentFrame">首页欢迎</a></li>
+                <li><a href="/product/list" target="contentFrame">商品列表</a></li>
+                <!-- 管理员专属菜单 -->
+                <li sec:authorize="hasRole('admin')"><a href="/product/add" target="contentFrame">添加商品</a></li>
+                <li sec:authorize="hasRole('admin')"><a href="/category/list" target="contentFrame">分类管理</a></li>
+            </ul>
+        </aside>
+
+        <!-- 右侧内容区（iframe 伪单页） -->
+        <main class="content">
+            <iframe name="contentFrame" src="/welcome" class="content-frame"></iframe>
+        </main>
+    </div>
+</body>
+</html>
